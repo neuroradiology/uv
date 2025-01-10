@@ -308,7 +308,7 @@ jobs:
         working-directory: ${{ env.UV_WORKSPACE }}
         env:
           # Avoid debug build stack overflows.
-          UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+          RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
         run: |
           Set-Alias -Name uv -Value ./target/debug/uv
           uv venv -v
@@ -319,7 +319,7 @@ jobs:
         shell: powershell
         env:
           # Avoid debug build stack overflows.
-          UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+          RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
         run: |
           Set-Alias -Name uv -Value ./target/debug/uv
           Set-Alias -Name uvx -Value ./target/debug/uvx
@@ -747,7 +747,7 @@ jobs:
     runs-on: windows-latest
     env:
       # Avoid debug build stack overflows.
-      UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+      RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
 
     steps:
       - name: "Download binary"
@@ -911,7 +911,7 @@ jobs:
       - name: "Check install"
         env:
           # Avoid debug build stack overflows.
-          UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+          RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
         run: |
           .\uv.exe pip install anyio
 
@@ -1043,7 +1043,7 @@ jobs:
       - name: "Check install"
         env:
           # Avoid debug build stack overflows.
-          UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+          RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
         run: |
           .\uv.exe pip install anyio
 
@@ -1537,7 +1537,7 @@ jobs:
     runs-on: windows-latest
     env:
       # Avoid debug build stack overflows.
-      UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+      RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
     steps:
       - uses: actions/checkout@v4
 
@@ -1563,7 +1563,7 @@ jobs:
     runs-on: windows-latest
     env:
       # Avoid debug build stack overflows.
-      UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+      RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
     steps:
       - uses: actions/checkout@v4
 
@@ -1590,7 +1590,7 @@ jobs:
     runs-on: windows-latest
     env:
       # Avoid debug build stack overflows.
-      UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+      RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
     steps:
       - uses: actions/checkout@v4
 
@@ -1618,7 +1618,7 @@ jobs:
     runs-on: windows-latest
     env:
       # Avoid debug build stack overflows.
-      UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+      RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
     steps:
       - uses: actions/checkout@v4
 
@@ -1753,7 +1753,7 @@ jobs:
         shell: bash -el {0}
         env:
           # Avoid debug build stack overflows.
-          UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+          RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
         run: python ./scripts/check_system_python.py --uv ./uv
 
   system-test-amazonlinux:
@@ -1792,7 +1792,7 @@ jobs:
     runs-on: windows-latest
     env:
       # Avoid debug build stack overflows.
-      UV_STACK_SIZE: 3000000 # 3 megabyte, triple the default on windows
+      RUST_MIN_STACK: 3000000 # 3 megabyte, 1.5x the rust default on windows
     steps:
       - uses: actions/checkout@v4
 
