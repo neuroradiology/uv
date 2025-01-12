@@ -3140,6 +3140,7 @@ dependencies = [
  "rancor",
  "rend",
  "rkyv_derive",
+ "smallvec",
  "tinyvec",
  "uuid",
 ]
@@ -5003,6 +5004,7 @@ dependencies = [
  "insta",
  "rkyv",
  "serde",
+ "smallvec",
  "thiserror 2.0.11",
  "url",
  "uv-normalize",
@@ -5318,6 +5320,7 @@ name = "uv-platform-tags"
 version = "0.0.1"
 dependencies = [
  "insta",
+ "memchr",
  "rkyv",
  "rustc-hash",
  "serde",
